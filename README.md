@@ -24,7 +24,8 @@ Finish time: ____
 
 Actual time needed to complete: ___
 
-- 12-18-201 9am - Init
+- 12-18-2019 9:00am - Init
+- 12-18-2019 10:48am - Some CSS and Heroku live with DB provisioned
 
 ## Credits and Collaborations
 
