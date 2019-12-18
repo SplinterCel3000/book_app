@@ -11,10 +11,11 @@
   <main>
     <header>
       <h2>The Database Render</h2>
-      <a href="new-book">CLICK ME</a>
+      <a href="new-book">new-book</a>
+      <a href="./books/detail">DETAIL</a>
     </header>
 
-    <% arrayOfBooks.forEach((book, i) => { %>
+    <% arrayOfBooks.forEach(book => { %>
         <h3>Book Counter: <%= numBooks %></h3>
       <div>
           <img src=<%= book.image_url %>>

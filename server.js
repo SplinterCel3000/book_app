@@ -19,10 +19,33 @@ app.use(express.static('./public'));
 app.use(express.urlencoded());
 app.post('/searches', getBookInfo);
 
+//  ROUTES
 
 app.get('/', getBooks);
 
 app.get('/new-book', getForm);
+
+app.get('/books/detail', getOneBook);
+
+
+//  GET ONE BOOK DETAILS and SHOW
+
+function getOneBook(request, response) {
+  let id = request.params.book_id;
+  let sql = 'SELECT * FROM books WHERE id = $1;';
+  let safeValues = [id];
+  client.query(sql, safeValues)
+    .then(results => {
+      // let chosenBook = results.rows[0];
+      response.render('pages/books/detail', {bookInfo:results.rows[0]});
+    })
+  // go to the database, get a specific book using the id of that book and show the details of that book on the detail.ejs page
+}
+
+// function showBooks(request, response){
+//   // display a form to add a task
+//   response.render('pages/addTask.ejs');
+// }
 
 
 //  NEW BOOK CALL
