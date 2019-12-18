@@ -4,10 +4,11 @@ const express = require('express');
 const app = express();
 
 require('ejs');
+require('dotenv').config();
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 const superagent = require('superagent');
-require('dotenv').config();
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -21,16 +22,28 @@ app.post('/searches', getBookInfo);
 
 app.get('/', getBooks);
 
+app.get('/new-book', getForm);
+
+
+//  NEW BOOK CALL
+
+function getForm(request, response) {
+  response.render('./pages/new-book');
+}
+
+//  BOOK.SQL CALL
+
 function getBooks(request, response) {
   let sql = 'SELECT * FROM books;';
+
   client.query(sql)
     .then(results => {
-      response.render('./pages/index', {arrayOfBooks:results.row});
+      response.render('./pages/index', {arrayOfBooks:results.rows, numBooks:results.rows.length});
     })
     .catch( (error) => console.log(error));
 }
 
-// API CALL BELOW
+//  API CALL BELOW
 
 function getBookInfo(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';

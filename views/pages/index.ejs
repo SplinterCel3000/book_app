@@ -11,20 +11,20 @@
   <main>
     <header>
       <h2>The Database Render</h2>
+      <a href="new-book">CLICK ME</a>
     </header>
-   
-    <ul>
-      <% arrayOfBooks.forEach(book => { %>
-        <li><%= book.author %></li>
-        <li><%= book.title %></li>
-        <li><%= book.isbn %></li>
-        <li><img src=<%= book.img_url %> /></li>
-        <li><%= book.description %></li>
-        <li><%= book.bookshelf %></li>
-        <!-- <a href="/books/<%= book.id %>">Detail View</a> -->
+
+    <% arrayOfBooks.forEach((book, i) => { %>
+        <h3>Book Counter: <%= numBooks %></h3>
+      <div>
+          <img src=<%= book.image_url %>>
+          <h3><%= book.title %></h3>
+          <p><%= book.author %></p>
+          <a><%= book.url %></a>
+          <p><%= book.description %></p> 
+      </div>
       <% }) %>
-    </ul>
-    
+
   </main>
 </body>
 </html>
