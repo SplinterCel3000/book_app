@@ -24,7 +24,7 @@
         <p><%= book.isbn %></p>
         <form action="/add" method="post">
           <fieldset>
-            <legend>Add A Book to Bookshelf</legend>
+            <legend>Add A Book to Saved Books</legend>
 
             <input type="hidden" name="title" value="<%= book.title %>"></input>
 
@@ -38,7 +38,7 @@
 
             <input type="hidden" name="isbn" value="<%= book.isbn %>"></input>
 
-            <input type="text" name="bookshelf" value="<%= book.bookshelf %>"></input>
+            <input type="hidden" name="bookshelf" value="<%= book.bookshelf %>"></input>
 
             <button type="submit">Add Book</button>
           </fieldset>
