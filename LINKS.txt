@@ -1,0 +1,8 @@
+
+BOOK_APP LINKS
+
+https://trello.com/b/BzcmQCD3/bookapp
+
+https://book-app-peter-cole.herokuapp.com
+
+https://github.com/petercole3/book_app
