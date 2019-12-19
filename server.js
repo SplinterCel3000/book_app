@@ -21,8 +21,7 @@ app.use(methodOverride('_method'));
 app.post('/searches', getBookInfo);
 app.post('/add', addBook);
 app.put('/update/:book_id', updateBook);
-
-// :book.id stuff TO DO
+app.put('/delete/:book_id', deleteBook);
 
 //  ROUTES
 
@@ -31,7 +30,6 @@ app.get('/', getBooks); // index.ejs
 app.get('/new-book', getForm); // new-book.ejs
 
 app.get('/books/:book_id', getOneBook);
-
 
 //  GET ONE BOOK DETAILS and SHOW
 
@@ -43,14 +41,7 @@ function getOneBook(request, response) {
     .then(results => {
       response.render('pages/books/detail', {bookInfo:results.rows[0]});
     })
-  // go to the database, get a specific book using the id of that book and show the details of that book on the detail.ejs page
 }
-
-// function showBooks(request, response){
-//   // display a form to add a task
-//   response.render('pages/addTask.ejs');
-// }
-
 
 //  NEW BOOK CALL
 
@@ -61,7 +52,7 @@ function getForm(request, response) {
 //  BOOK.SQL CALL
 
 function getBooks(request, response) {
-  let sql = 'SELECT * FROM books;';
+  let sql = 'SELECT DISTINCT * FROM books;';
 
   client.query(sql)
     .then(results => {
@@ -70,7 +61,7 @@ function getBooks(request, response) {
     .catch( (error) => console.log(error));
 }
 
-// ADD BOOK FUNCTION
+//  ADD BOOK FUNCTION
 
 function addBook(request, response) {
   let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
@@ -84,11 +75,23 @@ function addBook(request, response) {
 
 function updateBook(request, response) {
   let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
-  let sql = 'UPDATE books SET author=$1, title=$2, isbn=$3, url=$4, image_url=$5, description=$6, bookshelf=$7';
-  // let id = request.params.book_id;
+  let sql = 'UPDATE books SET author=$1, title=$2, isbn=$3, url=$4, image_url=$5, description=$6, bookshelf=$7 WHERE isbn = $3;';
+  // let id = request.params.book_id; // if we want to stay on same page
   let safeValues = [author, title, isbn, url, image_url, description, bookshelf];
   client.query(sql, safeValues);
+  // response.redirect(`/books/${id}`); // if we want to stay on same page
   response.redirect('/');
+}
+
+//  DELETE
+
+function deleteBook(request, response) {
+  let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
+  let sql = 'DELETE FROM books WHERE isbn = $3;';
+  let id = request.params.book_id;
+  let safeValues = [author, title, isbn, url, image_url, description, bookshelf];
+  client.query(sql, safeValues);
+  response.redirect(`/books/${id}`);
 }
 
 //  API CALL BELOW
@@ -136,7 +139,6 @@ function Book(bookObj) {
   this.image_url = bookObj.volumeInfo.imageLinks && bookObj.volumeInfo.imageLinks.smallThumbnail ? bookObj.volumeInfo.imageLinks.smallThumbnail : placeholderImage;
   this.description = bookObj.volumeInfo.description;
   this.isbn = bookObj.volumeInfo.industryIdentifiers[0].identifier;
-  // this.bookshelf = '';
 }
 
 app.use('*', (request, response) => {

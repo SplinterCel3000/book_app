@@ -61,6 +61,7 @@ Actual time needed to complete: ____
 
 - 12-19-2019 12:13pm - Installed method-override
 - 12-19-2019 12:21pm - Update books functional
+- 12-19-2019 12:55pm - update works better and distinct
 
 ## 
 
