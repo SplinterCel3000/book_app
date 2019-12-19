@@ -18,6 +18,11 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.urlencoded());
 app.post('/searches', getBookInfo);
+app.post('/add', addBook);
+// app.get('/add', showForm);
+
+
+// :book.id stuff TO DO
 
 //  ROUTES
 
@@ -25,7 +30,7 @@ app.get('/', getBooks);
 
 app.get('/new-book', getForm);
 
-app.get('/books/detail', getOneBook);
+app.get('/books/:book_id', getOneBook);
 
 
 //  GET ONE BOOK DETAILS and SHOW
@@ -36,7 +41,6 @@ function getOneBook(request, response) {
   let safeValues = [id];
   client.query(sql, safeValues)
     .then(results => {
-      // let chosenBook = results.rows[0];
       response.render('pages/books/detail', {bookInfo:results.rows[0]});
     })
   // go to the database, get a specific book using the id of that book and show the details of that book on the detail.ejs page
@@ -66,6 +70,18 @@ function getBooks(request, response) {
     .catch( (error) => console.log(error));
 }
 
+// ADD BOOK FUNCTION
+
+function addBook(request, response) {
+  let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
+  console.log(request.body);
+  let sql = 'INSERT INTO books (author, title, isbn, url, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6, $7);';
+  let safeValues = [author, title, isbn, url, image_url, description, bookshelf];
+  client.query(sql, safeValues);
+  response.redirect('/');
+}
+
+
 //  API CALL BELOW
 
 function getBookInfo(request, response) {
@@ -84,11 +100,11 @@ function getBookInfo(request, response) {
       let bookArray = res.body.items.map(book => {
         return new Book(book)
       });
-        // console.log(bookArray);
-      response.render('searches/show', {bookArray:bookArray});
+      response.render('pages/searches/show-search', {bookArray:bookArray});
     })
     // eslint-disable-next-line no-unused-vars
     .catch(error => {
+      console.log('new error', error);
       response.render('pages/error')
     })
 }
@@ -107,9 +123,11 @@ function Book(bookObj) {
   let placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg(13 kB)';
   this.title = bookObj.volumeInfo.title || 'no title available';
   this.author = bookObj.volumeInfo.authors[0] || 'no author available';
-  // this.url = bookObj.selfLink
   this.url = linkClean(bookObj.selfLink);
-  this.image = bookObj.volumeInfo.imageLinks && bookObj.volumeInfo.imageLinks.smallThumbnail ? bookObj.volumeInfo.imageLinks.smallThumbnail : placeholderImage;
+  this.image_url = bookObj.volumeInfo.imageLinks && bookObj.volumeInfo.imageLinks.smallThumbnail ? bookObj.volumeInfo.imageLinks.smallThumbnail : placeholderImage;
+  this.description = bookObj.volumeInfo.description;
+  this.isbn = bookObj.volumeInfo.industryIdentifiers[0].identifier;
+  // this.bookshelf = '';
 }
 
 app.use('*', (request, response) => {
