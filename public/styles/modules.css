@@ -5,22 +5,22 @@
 form input {
     /* height: 15px; */
     float: right;
+    border-radius: 2px;
+    
 }
-#i4c-draggable-container {
-    visibility: hidden;
-}
-#i4c-dialogs-container {
-    visibility: hidden;
-}
-#placeholder {
+
+#saved {
     height: 200px;
 }
 form button {
     background-color: black;
     color: white;
     height: 33px;
+    border: 2px black solid;
+    border-radius: 2px;
 }
 fieldset {
     background-color: rgb(206, 206, 206);
     height: 40px;
+    border-radius: 2px;
 }

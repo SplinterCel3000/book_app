@@ -6,13 +6,16 @@ main {
     height: fit-content;
     /* justify-content: center; */
     align-content: center;
+    font-family: 'Open Sans', sans-serif;
 }
 header {
     background-color: rgb(10, 10, 10);
     display: flex;
-    justify-content: start;
+    justify-content: space-evenly;
+    flex-direction: column;
     padding-left: 13px;
     width: 450px;
+    height: 70px;
     align-self: flex-start;
 }
 h2 {
@@ -58,4 +61,10 @@ img {
     width: 128px;
     border: 2px solid white;
     align-self: center;
+}
+#i4c-draggable-container {
+    visibility: hidden;
+}
+#i4c-dialogs-container {
+    visibility: hidden;
 }

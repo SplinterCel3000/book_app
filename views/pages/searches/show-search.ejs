@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Show Search</title>
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/modules.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Show Search</title>
 </head>
+
 <body>
 
   <h1>Show Search Page</h1>
 
   <a href="/">HOME</a>
-  
+
   <br />
 
   <% bookArray.forEach(book => { %>
@@ -26,28 +33,29 @@
           <fieldset>
             <legend>Add A Book to Saved Books</legend>
 
-            <input type="hidden" name="title" value="<%= book.title %>"></input>
+        <input type="hidden" name="title" value="<%= book.title %>"></input>
 
-            <input type="hidden" name="author" value="<%= book.author %>"></input>
+        <input type="hidden" name="author" value="<%= book.author %>"></input>
 
-            <input type="hidden" name="image_url" value="<%= book.image_url %>"></input>
+        <input type="hidden" name="image_url" value="<%= book.image_url %>"></input>
 
-            <input type="hidden" name="url" value="<%= book.url %>"></input>
+        <input type="hidden" name="url" value="<%= book.url %>"></input>
 
-            <input type="hidden" name="description" value="<%= book.description %>"></input>
+        <input type="hidden" name="description" value="<%= book.description %>"></input>
 
-            <input type="hidden" name="isbn" value="<%= book.isbn %>"></input>
+        <input type="hidden" name="isbn" value="<%= book.isbn %>"></input>
 
-            <input type="hidden" name="bookshelf" value="<%= book.bookshelf %>"></input>
+        <input type="hidden" name="bookshelf" value="<%= book.bookshelf %>"></input>
 
-            <button type="submit">Add Book</button>
-          </fieldset>
-        </form>
-    </div>
- <% }) %>
+        <button type="submit">Add Book</button>
+      </fieldset>
+    </form>
+  </div>
+  <% }) %>
 
-    <!-- Add Detail button  -->
-    <!-- Add to Bookshelf -->
+  <!-- Add Detail button  -->
+  <!-- Add to Bookshelf -->
 
 </body>
+
 </html>
