@@ -8,7 +8,7 @@ require('dotenv').config();
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 const superagent = require('superagent');
-
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 3001;
 
@@ -17,18 +17,18 @@ client.on('error', (error) => console.log(error));
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.urlencoded());
+app.use(methodOverride('_method'));
 app.post('/searches', getBookInfo);
 app.post('/add', addBook);
-// app.get('/add', showForm);
-
+app.put('/update/:book_id', updateBook);
 
 // :book.id stuff TO DO
 
 //  ROUTES
 
-app.get('/', getBooks);
+app.get('/', getBooks); // index.ejs
 
-app.get('/new-book', getForm);
+app.get('/new-book', getForm); // new-book.ejs
 
 app.get('/books/:book_id', getOneBook);
 
@@ -74,13 +74,22 @@ function getBooks(request, response) {
 
 function addBook(request, response) {
   let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
-  console.log(request.body);
   let sql = 'INSERT INTO books (author, title, isbn, url, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6, $7);';
   let safeValues = [author, title, isbn, url, image_url, description, bookshelf];
   client.query(sql, safeValues);
   response.redirect('/');
 }
 
+//  UPDATE BOOK FUNCTION
+
+function updateBook(request, response) {
+  let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
+  let sql = 'UPDATE books SET author=$1, title=$2, isbn=$3, url=$4, image_url=$5, description=$6, bookshelf=$7';
+  // let id = request.params.book_id;
+  let safeValues = [author, title, isbn, url, image_url, description, bookshelf];
+  client.query(sql, safeValues);
+  response.redirect('/');
+}
 
 //  API CALL BELOW
 

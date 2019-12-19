@@ -45,7 +45,7 @@ Actual time needed to complete: 2hr
 
 - 12-18-2019 1:30pm - Detail page set up
 - 12-19-2019 9:00am - Book:id route set up
-- 129-19-2019 10:30am - Detail page functional
+- 12-19-2019 10:30am - Detail page functional
 
 ## 
 
@@ -53,11 +53,14 @@ Number and name of feature: 3 - Editing Details
 
 Estimate of time needed to complete: 2hr
 
-Start time: ____
+Start time: 12pm
 
 Finish time: ____
 
 Actual time needed to complete: ____
+
+- 12-19-2019 12:13pm - Installed method-override
+- 12-19-2019 12:21pm - Update books functional
 
 ## 
 
