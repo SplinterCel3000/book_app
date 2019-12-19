@@ -21,8 +21,60 @@
         <h3><%= bookInfo.title %></h3>
         <p><%= bookInfo.author %></p>
         <a><%= bookInfo.url %></a>
-        <p><%= bookInfo.description %></p>
-        
+        <p><%= bookInfo.description %></p> 
+        <p>ISBN: <%= bookInfo.isbn%></p>
+        <p>Bookshelf: <%= bookInfo.bookshelf %></p>        
+      </section>
+      
+    <!-- UPDATE -->
+      
+      <form action=" <%= `/update/${bookInfo.id}?_method=PUT` %>" method="post">
+        <fieldset>
+          <legend>Update A Book</legend>
+
+          <input type="text" name="title" value="<%= bookInfo.title %>"></input>
+
+          <input type="text" name="author" value="<%= bookInfo.author %>"></input>
+
+          <input type="text" name="image_url" value="<%= bookInfo.image_url %>"></input>
+
+          <input type="text" name="url" value="<%= bookInfo.url %>"></input>
+
+          <input type="text" name="description" value="<%= bookInfo.description %>"></input>
+
+          <input type="text" name="isbn" value="<%= bookInfo.isbn %>"></input>
+
+          <input type="text" name="bookshelf" value="<%= bookInfo.bookshelf %>"></input>
+
+          <button type="submit">Update Book</button>
+        </form>
+
+    <!-- DELETE -->
+
+      <form action=" <%= `/delete/${bookInfo.id}?_method=delete` %>" method="post">
+        <fieldset>
+          <legend>Delete A Book</legend>
+
+          <input type="hidden" name="title" value="<%= bookInfo.title %>"></input>
+
+          <input type="hidden" name="author" value="<%= bookInfo.author %>"></input>
+
+          <input type="hidden" name="image_url" value="<%= bookInfo.image_url %>"></input>
+
+          <input type="hidden" name="url" value="<%= bookInfo.url %>"></input>
+
+          <input type="hidden" name="description" value="<%= bookInfo.description %>"></input>
+
+          <input type="hidden" name="isbn" value="<%= bookInfo.isbn %>"></input>
+
+          <input type="hidden" name="bookshelf" value="<%= bookInfo.bookshelf %>"></input>
+
+          <button type="submit">Delete Book</button>
+        </form>
+
+      <section>
+        <!-- form action ${bookInfo.id} in here -->
+      </section>
 
   </section>
 </body>
