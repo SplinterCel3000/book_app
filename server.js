@@ -29,7 +29,7 @@ app.get('/', getBooks); // index.ejs
 
 app.get('/new-book', getForm); // new-book.ejs
 
-app.get('/books/:book_id', getOneBook);
+app.get('/books/:book_id', getOneBook); // books/detail.ejs
 
 //  GET ONE BOOK DETAILS and SHOW
 
@@ -86,12 +86,10 @@ function updateBook(request, response) {
 //  DELETE
 
 function deleteBook(request, response) {
-  let { isbn } = request.body;
+  let {isbn} = request.body;
   let sql = 'DELETE FROM books WHERE isbn=$1;';
-  // let id = request.params.book_id; // if we want to stay on same page
-  let safeValues = [ isbn];
+  let safeValues = [isbn];
   client.query(sql, safeValues);
-  // response.redirect(`/books/${id}`); // if we want to stay on same page
   response.redirect('/');
 }
 
