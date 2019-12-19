@@ -21,7 +21,7 @@ app.use(methodOverride('_method'));
 app.post('/searches', getBookInfo);
 app.post('/add', addBook);
 app.put('/update/:book_id', updateBook);
-app.put('/delete/:book_id', deleteBook);
+app.delete('/delete/:book_id', deleteBook);
 
 //  ROUTES
 
@@ -86,12 +86,13 @@ function updateBook(request, response) {
 //  DELETE
 
 function deleteBook(request, response) {
-  let { author, title, isbn, url, image_url, description, bookshelf } = request.body;
-  let sql = 'DELETE FROM books WHERE isbn = $3;';
-  let id = request.params.book_id;
-  let safeValues = [author, title, isbn, url, image_url, description, bookshelf];
+  let { isbn } = request.body;
+  let sql = 'DELETE FROM books WHERE isbn=$1;';
+  // let id = request.params.book_id; // if we want to stay on same page
+  let safeValues = [ isbn];
   client.query(sql, safeValues);
-  response.redirect(`/books/${id}`);
+  // response.redirect(`/books/${id}`); // if we want to stay on same page
+  response.redirect('/');
 }
 
 //  API CALL BELOW
