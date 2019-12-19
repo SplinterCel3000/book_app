@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Book Collection</title>
+  <title>Index</title>
   <!-- <link rel="stylesheet" href="../../public/styles/reset.css" /> -->
   <link rel="stylesheet" href="../../public/styles/base.css" />
   <link rel="stylesheet" href="../../public/styles/layout.css" />
@@ -10,9 +10,9 @@
 <body>
   <main>
     <header>
+      <h1>Home</h1>
       <h2>The Database Render</h2>
-      <a href="new-book">new-book</a>
-      <a href="./books/detail">DETAIL</a>
+      <a href="new-book">ADD NEW BOOK</a>
     </header>
 
     <% arrayOfBooks.forEach(book => { %>
@@ -21,8 +21,7 @@
           <img src=<%= book.image_url %>>
           <h3><%= book.title %></h3>
           <p><%= book.author %></p>
-          <a><%= book.url %></a>
-          <p><%= book.description %></p> 
+          <a href="/books/<%= book.id %>">Detail View</a>
       </div>
       <% }) %>
 

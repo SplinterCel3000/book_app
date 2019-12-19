@@ -39,11 +39,39 @@ Estimate of time needed to complete: 2hr
 
 Start time: 1:30pm
 
-Finish time: ___
+Finish time: 10:30am next day
 
-Actual time needed to complete: ___
+Actual time needed to complete: 2hr
 
 - 12-18-2019 1:30pm - Detail page set up
+- 12-19-2019 9:00am - Book:id route set up
+- 129-19-2019 10:30am - Detail page functional
+
+## 
+
+Number and name of feature: 3 - Editing Details
+
+Estimate of time needed to complete: 2hr
+
+Start time: ____
+
+Finish time: ____
+
+Actual time needed to complete: ____
+
+## 
+
+Number and name of feature: 4 - Adding Books
+
+Estimate of time needed to complete: 2hr
+
+Start time: 10:30am
+
+Finish time: 11:15am
+
+Actual time needed to complete: 45min
+
+- 12-18-2019 1:30pm - Adding books functional, live on Heroku
 
 ## Credits and Collaborations
 
