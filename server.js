@@ -87,6 +87,7 @@ function getBookInfo(request, response) {
         // console.log(bookArray);
       response.render('searches/show', {bookArray:bookArray});
     })
+    // eslint-disable-next-line no-unused-vars
     .catch(error => {
       response.render('pages/error')
     })
