@@ -1,0 +1,1407 @@
+Last login: Wed Dec 18 13:10:28 on ttys000
+peter@serac ~ % cd codefellows/301/book_app 
+peter@serac book_app % code .
+peter@serac book_app % cd ~/demo
+peter@serac demo % code . 
+peter@serac demo % live-server 
+Serving "/Users/peter/demo" at http://127.0.0.1:8080
+Ready for changes
+GET /favicon.ico 404 1.394 ms - 150
+Change detected /Users/peter/demo/app.js
+Change detected /Users/peter/demo/index.html
+^C
+peter@serac demo % clear
+
+
+
+
+
+
+
+
+
+
+
+peter@serac demo % cd ~/codefellows/301/book_app 
+peter@serac book_app % code .
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:17:17 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+ReferenceError: /Users/peter/codefellows/301/book_app/views/pages/index.ejs:26
+    24|           <a><%= book.url %></a>
+    25|           <p><%= book.description %></p> 
+ >> 26|           <a href="/books/<%= books.id %>">Detail View</a>
+    27|       </div>
+    28|       <% }) %>
+    29| 
+
+books is not defined
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/index.ejs:31:26)
+    at Array.forEach (<anonymous>)
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/index.ejs:10:21)
+    at index (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:656:17)
+    at tryHandleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:254:36)
+    at View.exports.renderFile [as engine] (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:459:10)
+    at View.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/view.js:135:8)
+    at tryRender (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:640:10)
+    at Function.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:592:3)
+    at ServerResponse.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/response.js:1012:7)
+ReferenceError: /Users/peter/codefellows/301/book_app/views/pages/index.ejs:26
+    24|           <a><%= book.url %></a>
+    25|           <p><%= book.description %></p> 
+ >> 26|           <a href="/books/<%= book_id %>">Detail View</a>
+    27|       </div>
+    28|       <% }) %>
+    29| 
+
+book_id is not defined
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/index.ejs:31:26)
+    at Array.forEach (<anonymous>)
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/index.ejs:10:21)
+    at index (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:656:17)
+    at tryHandleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:254:36)
+    at View.exports.renderFile [as engine] (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:459:10)
+    at View.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/view.js:135:8)
+    at tryRender (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:640:10)
+    at Function.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:592:3)
+    at ServerResponse.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/response.js:1012:7)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:19:07 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+TypeError: /Users/peter/codefellows/301/book_app/views/pages/books/detail.ejs:20
+    18|   </header>
+    19|     
+ >> 20|         <img src=<%= bookInfo.image_url %>>
+    21|         <h3><%= bookInfo.title %></h3>
+    22|         <p><%= bookInfo.author %></p>
+    23|         <a><%= bookInfo.url %></a>
+
+Cannot read property 'image_url' of undefined
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/books/detail.ejs:10:35)
+    at detail (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:656:17)
+    at tryHandleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:254:36)
+    at View.exports.renderFile [as engine] (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:459:10)
+    at View.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/view.js:135:8)
+    at tryRender (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:640:10)
+    at Function.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:592:3)
+    at ServerResponse.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/response.js:1012:7)
+    at /Users/peter/codefellows/301/book_app/server.js:42:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:19:33 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:29:13 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:29:51 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:29:52 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+Error: Failed to lookup view "searches/show-search" in views directory "/Users/peter/codefellows/301/book_app/views"
+    at Function.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/response.js:1012:7)
+    at /Users/peter/codefellows/301/book_app/server.js:90:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 17:30:21 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+ReferenceError: /Users/peter/codefellows/301/book_app/views/pages/searches/show-search.ejs:10
+    8| </head>
+    9| <body>
+ >> 10|   <% arrayOfBooks.forEach(book => { %>
+    11|     <div>
+    12|         <img src=<%= book.image %> > 
+    13|         <h3><%= book.title %></h3>
+
+arrayOfBooks is not defined
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/searches/show-search.ejs:10:8)
+    at show-search (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:656:17)
+    at tryHandleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:254:36)
+    at View.exports.renderFile [as engine] (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:459:10)
+    at View.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/view.js:135:8)
+    at tryRender (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:640:10)
+    at Function.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:592:3)
+    at ServerResponse.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/response.js:1012:7)
+    at /Users/peter/codefellows/301/book_app/server.js:90:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+(node:22212) UnhandledPromiseRejectionWarning: error: invalid input syntax for type integer: "detail"
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:22212) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:22212) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:22212) UnhandledPromiseRejectionWarning: error: invalid input syntax for type integer: "detail"
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:22212) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:08:48 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+/Users/peter/codefellows/301/book_app/server.js:21
+app.post('/add', addBook);
+                 ^
+
+ReferenceError: addBook is not defined
+    at Object.<anonymous> (/Users/peter/codefellows/301/book_app/server.js:21:18)
+    at Module._compile (internal/modules/cjs/loader.js:1121:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1160:10)
+    at Module.load (internal/modules/cjs/loader.js:976:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:884:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:67:12)
+    at internal/main/run_main_module.js:17:47
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:14:24 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:16:48 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{ title: 'bana' }
+{
+  bookshelf: 'placeholder="Enter',
+  title: 'placeholder="Enter',
+  author: 'placeholder="Enter',
+  url: 'placeholder="Enter',
+  description: 'placeholder="Enter'
+}
+{
+  bookshelf: 'placeholder="Enter',
+  title: 'Harry',
+  author: 'Diana',
+  url: 'https://www.googleapis.com/books/v1/volumes/ThAaBwAAQBAJ',
+  description: 'placeholder="Enter'
+}
+{
+  bookshelf: '',
+  title: 'Bear',
+  author: 'Bear',
+  url: 'https://www.googleapis.com/books/v1/volumes/ULw_9xQg_ygC',
+  description: ''
+}
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:36:58 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:37:10 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:37:14 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:37:20 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:38:32 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:39:06 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+TypeError: Cannot read property '0' of undefined
+    at new Book (/Users/peter/codefellows/301/book_app/server.js:129:52)
+    at /Users/peter/codefellows/301/book_app/server.js:101:16
+    at Array.map (<anonymous>)
+    at /Users/peter/codefellows/301/book_app/server.js:100:38
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:39:48 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:39:50 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Eragon,',
+  author: 'Christopher',
+  url: 'https://www.googleapis.com/books/v1/volumes/-Fx8SHQ3Qz8C',
+  description: 'ERAGON'
+}
+{
+  title: 'Brisingr, Or, The Seven Promises of Eragon Shadeslayer and Saphira Bjartskular',
+  author: 'Christopher',
+  url: 'https://www.googleapis.com/books/v1/volumes/p86SiYucX3EC',
+  description: 'Presents'
+}
+TypeError: Cannot read property '0' of undefined
+    at new Book (/Users/peter/codefellows/301/book_app/server.js:125:43)
+    at /Users/peter/codefellows/301/book_app/server.js:101:16
+    at Array.map (<anonymous>)
+    at /Users/peter/codefellows/301/book_app/server.js:100:38
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+TypeError: Cannot read property '0' of undefined
+    at new Book (/Users/peter/codefellows/301/book_app/server.js:125:43)
+    at /Users/peter/codefellows/301/book_app/server.js:101:16
+    at Array.map (<anonymous>)
+    at /Users/peter/codefellows/301/book_app/server.js:100:38
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+TypeError: Cannot read property '0' of undefined
+    at new Book (/Users/peter/codefellows/301/book_app/server.js:125:43)
+    at /Users/peter/codefellows/301/book_app/server.js:101:16
+    at Array.map (<anonymous>)
+    at /Users/peter/codefellows/301/book_app/server.js:100:38
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+{
+  title: 'Hatchet',
+  author: 'Gary Paulsen',
+  url: 'https://www.googleapis.com/books/v1/volumes/QdX94z_OoukC',
+  description: 'Celebrate'
+}
+{
+  title: 'Hatchet',
+  author: 'Gary Paulsen',
+  url: 'https://www.googleapis.com/books/v1/volumes/QdX94z_OoukC',
+  description: 'Celebrate the thirtieth anniversary of the Newbery Honor–winning survival novel Hatchet with a pocket-sized edition perfect for travelers to take along on their own adventures. This special anniversary edition includes a new introduction and commentary by author Gary Paulsen, pen-and-ink illustrations by Drew Willis, and a water resistant cover. Hatchet has also been nominated as one of America’s best-loved novels by PBS’s The Great American Read. Thirteen-year-old Brian Robeson, haunted by his secret knowledge of his mother’s infidelity, is traveling by single-engine plane to visit his father for the first time since the divorce. When the plane crashes, killing the pilot, the sole survivor is Brian. He is alone in the Canadian wilderness with nothing but his clothing, a tattered windbreaker, and the hatchet his mother had given him as a present. At first consumed by despair and self-pity, Brian slowly learns survival skills—how to make a shelter for himself, how to hunt and fish and forage for food, how to make a fire—and even finds the courage to start over from scratch when a tornado ravages his campsite. When Brian is finally rescued after fifty-four days in the wild, he emerges from his ordeal with new patience and maturity, and a greater understanding of himself and his parents.'
+}
+{
+  title: 'Hatchet',
+  author: 'Gary Paulsen',
+  url: 'https://www.googleapis.com/books/v1/volumes/QdX94z_OoukC',
+  description: 'Celebrate the thirtieth anniversary of the Newbery Honor–winning survival novel Hatchet with a pocket-sized edition perfect for travelers to take along on their own adventures. This special anniversary edition includes a new introduction and commentary by author Gary Paulsen, pen-and-ink illustrations by Drew Willis, and a water resistant cover. Hatchet has also been nominated as one of America’s best-loved novels by PBS’s The Great American Read. Thirteen-year-old Brian Robeson, haunted by his secret knowledge of his mother’s infidelity, is traveling by single-engine plane to visit his father for the first time since the divorce. When the plane crashes, killing the pilot, the sole survivor is Brian. He is alone in the Canadian wilderness with nothing but his clothing, a tattered windbreaker, and the hatchet his mother had given him as a present. At first consumed by despair and self-pity, Brian slowly learns survival skills—how to make a shelter for himself, how to hunt and fish and forage for food, how to make a fire—and even finds the courage to start over from scratch when a tornado ravages his campsite. When Brian is finally rescued after fifty-four days in the wild, he emerges from his ordeal with new patience and maturity, and a greater understanding of himself and his parents.',
+  isbn: '9781442403321'
+}
+{
+  title: 'Mountaineering: The Freedom of the Hills',
+  author: 'The Mountaineers',
+  url: 'http://books.google.com/books/content?id=GwyXx4DzDjwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  description: `"If there is only one 'how to' book to read for the aspirant and expert alike, it is Freedom of the Hills. In fact, it is fair to say that Freedom is the definitive guide to mountains and climbing and has influenced pretty much every climber." -- Conrad Anker * 50th anniversary edition of the title considered "bible" of climbing * With nearly 1 million copies sold, this is the all-time bestselling mountaineering and climbing title * Printed on 100% recycled paper Since the publication of the first edition in 1960, Freedom, as the book is known, has endured as a classic mountaineering text. From choosing equipment to tying a climbing knot, and from basic rappelling techniques to planning an expedition -- it's all here in this essential mountaineering reference. A team of more than 40 experts -- all active climbers and climbing educators -- reviewed, revised, and updated this compendium to reflect the latest evolutions in mountaineering equipment and techniques. Major updates include a significant new chapter on conditioning, plus detailed and extensive revisions to rescue and first-response, aid climbing, and waterfall and ice climbing.`,
+  isbn: '9781594854088'
+}
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:50:49 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Mountaineering: The Freedom of the Hills',
+  author: 'The Mountaineers',
+  url: '',
+  description: `"If there is only one 'how to' book to read for the aspirant and expert alike, it is Freedom of the Hills. In fact, it is fair to say that Freedom is the definitive guide to mountains and climbing and has influenced pretty much every climber." -- Conrad Anker * 50th anniversary edition of the title considered "bible" of climbing * With nearly 1 million copies sold, this is the all-time bestselling mountaineering and climbing title * Printed on 100% recycled paper Since the publication of the first edition in 1960, Freedom, as the book is known, has endured as a classic mountaineering text. From choosing equipment to tying a climbing knot, and from basic rappelling techniques to planning an expedition -- it's all here in this essential mountaineering reference. A team of more than 40 experts -- all active climbers and climbing educators -- reviewed, revised, and updated this compendium to reflect the latest evolutions in mountaineering equipment and techniques. Major updates include a significant new chapter on conditioning, plus detailed and extensive revisions to rescue and first-response, aid climbing, and waterfall and ice climbing.`,
+  isbn: '9781594854088'
+}
+{
+  title: 'Mountaineering: The Freedom of the Hills',
+  author: 'The Mountaineers',
+  url: 'http://books.google.com/books/content?id=GwyXx4DzDjwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  description: `"If there is only one 'how to' book to read for the aspirant and expert alike, it is Freedom of the Hills. In fact, it is fair to say that Freedom is the definitive guide to mountains and climbing and has influenced pretty much every climber." -- Conrad Anker * 50th anniversary edition of the title considered "bible" of climbing * With nearly 1 million copies sold, this is the all-time bestselling mountaineering and climbing title * Printed on 100% recycled paper Since the publication of the first edition in 1960, Freedom, as the book is known, has endured as a classic mountaineering text. From choosing equipment to tying a climbing knot, and from basic rappelling techniques to planning an expedition -- it's all here in this essential mountaineering reference. A team of more than 40 experts -- all active climbers and climbing educators -- reviewed, revised, and updated this compendium to reflect the latest evolutions in mountaineering equipment and techniques. Major updates include a significant new chapter on conditioning, plus detailed and extensive revisions to rescue and first-response, aid climbing, and waterfall and ice climbing.`,
+  isbn: '9781594854088'
+}
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:55:25 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:55:28 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:55:32 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:55:42 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:55:43 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 18:55:45 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Mountaineering: The Freedom of the Hills',
+  author: 'The Mountaineers',
+  url: 'http://books.google.com/books/content?id=GwyXx4DzDjwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  description: `"If there is only one 'how to' book to read for the aspirant and expert alike, it is Freedom of the Hills. In fact, it is fair to say that Freedom is the definitive guide to mountains and climbing and has influenced pretty much every climber." -- Conrad Anker * 50th anniversary edition of the title considered "bible" of climbing * With nearly 1 million copies sold, this is the all-time bestselling mountaineering and climbing title * Printed on 100% recycled paper Since the publication of the first edition in 1960, Freedom, as the book is known, has endured as a classic mountaineering text. From choosing equipment to tying a climbing knot, and from basic rappelling techniques to planning an expedition -- it's all here in this essential mountaineering reference. A team of more than 40 experts -- all active climbers and climbing educators -- reviewed, revised, and updated this compendium to reflect the latest evolutions in mountaineering equipment and techniques. Major updates include a significant new chapter on conditioning, plus detailed and extensive revisions to rescue and first-response, aid climbing, and waterfall and ice climbing.`,
+  isbn: '9781594854088'
+}
+(node:23172) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23172) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:23172) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{
+  title: 'Into Thin Air',
+  author: 'Paul Harrison',
+  image_url: 'http://books.google.com/books/content?id=Pd3luS8uGC4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/Pd3luS8uGC4C',
+  description: 'Take 2 is a brilliant new series that will focus mainly on Science, History or Geography, in addition to Literacy. Each non-fiction reader has a fiction partner on a linked theme. Into Thin Air (Fiction - literacy) is partnered with Stowaway (Fact - History). Ages 8+.',
+  isbn: '9780237542054'
+}
+(node:23172) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23172) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+{
+  title: 'A Guide for Using Hatchet in the Classroom',
+  author: 'Donna Ickes',
+  image_url: 'http://books.google.com/books/content?id=WO_cfDHDIYYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/WO_cfDHDIYYC',
+  description: 'This literature unit is used with Hatchet, by Gary Paulsen. Included are sample lesson plans, biographical sketch of the author, book summary, book report ideas and more.',
+  isbn: '9781557344496'
+}
+(node:23172) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23172) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 19:04:34 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Hatchet',
+  author: 'Gary Paulsen',
+  image_url: 'http://books.google.com/books/content?id=QdX94z_OoukC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/QdX94z_OoukC',
+  description: 'Celebrate the thirtieth anniversary of the Newbery Honor–winning survival novel Hatchet with a pocket-sized edition perfect for travelers to take along on their own adventures. This special anniversary edition includes a new introduction and commentary by author Gary Paulsen, pen-and-ink illustrations by Drew Willis, and a water resistant cover. Hatchet has also been nominated as one of America’s best-loved novels by PBS’s The Great American Read. Thirteen-year-old Brian Robeson, haunted by his secret knowledge of his mother’s infidelity, is traveling by single-engine plane to visit his father for the first time since the divorce. When the plane crashes, killing the pilot, the sole survivor is Brian. He is alone in the Canadian wilderness with nothing but his clothing, a tattered windbreaker, and the hatchet his mother had given him as a present. At first consumed by despair and self-pity, Brian slowly learns survival skills—how to make a shelter for himself, how to hunt and fish and forage for food, how to make a fire—and even finds the courage to start over from scratch when a tornado ravages his campsite. When Brian is finally rescued after fifty-four days in the wild, he emerges from his ordeal with new patience and maturity, and a greater understanding of himself and his parents.',
+  isbn: '9781442403321'
+}
+(node:23244) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23244) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:23244) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 19:05:51 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Mountaineering: The Freedom of the Hills',
+  author: 'The Mountaineers',
+  image_url: 'http://books.google.com/books/content?id=GwyXx4DzDjwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/GwyXx4DzDjwC',
+  description: `"If there is only one 'how to' book to read for the aspirant and expert alike, it is Freedom of the Hills. In fact, it is fair to say that Freedom is the definitive guide to mountains and climbing and has influenced pretty much every climber." -- Conrad Anker * 50th anniversary edition of the title considered "bible" of climbing * With nearly 1 million copies sold, this is the all-time bestselling mountaineering and climbing title * Printed on 100% recycled paper Since the publication of the first edition in 1960, Freedom, as the book is known, has endured as a classic mountaineering text. From choosing equipment to tying a climbing knot, and from basic rappelling techniques to planning an expedition -- it's all here in this essential mountaineering reference. A team of more than 40 experts -- all active climbers and climbing educators -- reviewed, revised, and updated this compendium to reflect the latest evolutions in mountaineering equipment and techniques. Major updates include a significant new chapter on conditioning, plus detailed and extensive revisions to rescue and first-response, aid climbing, and waterfall and ice climbing.`,
+  isbn: '9781594854088'
+}
+(node:23280) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23280) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:23280) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+clear
+^C%                                                                             peter@serac book_app % clear
+
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 19:06:37 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Mountaineering: Freedom of the Hills',
+  author: 'The Mountaineers',
+  image_url: 'http://books.google.com/books/content?id=vyE6DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/vyE6DwAAQBAJ',
+  description: '“The definitive guide to mountains and climbing . . .”—Conrad Anker For nearly 60 years it’s been revered as the “bible” of mountaineering–and now it’s even better than ever • The best-selling instructional text for new and intermediate climbers for more than half a century • New edition—fully updated techniques and all-new illustrations • Researched and written by a team of expert climbers Mountaineering: The Freedom of the Hills is the text beloved by generations of new climbers—the standard for climbing education around the world where it has been translated into 12 languages. For the all-new 9th Edition, committees comprosed of active climbers and climbing educators reviewed every chapter of instruction, and discussed updates with staff from the American Alpine Club (AAC), the American Institute for Avalanche Research and Education (AIARE), and the Access Fund. They also worked with professional members of the American Mountain Guides Association (AMGA), to review their work and ensure that the updated textbook includes the most current best practices for both alpine and rock climbing instruction. From gear selection to belay and repel techniques, from glacier travel to rope work, to safety, safety, and more safety—there is no more comprehensive and thoroughly vetted training manual for climbing than the standard set by Mountaineering: The Freedom of the Hills, 9th Edition. Significant updates to this edition include: • New alignment with AAC’s nationwide universal belay standard • Expanded and more detailed avalanche safety info, including how to better understand avalanches, evaluate hazards, travel safely in avy terrain, and locate and rescue a fellow climber in an avalanche • Newly revamped chapters on clothing and camping • All-new illustrations reflecting the latest gear and techniques—created by artist John McMullen, former art director of Climbing magazine • Review of and contributions to multiple sections by AMGA-certified guides • Fresh approach to the Ten Essentials—now making the iconic list easier to recall',
+  isbn: '9781680510058'
+}
+(node:23295) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23295) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:23295) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{
+  title: 'Into Thin Air',
+  author: 'Cindy Miles',
+  image_url: 'http://books.google.com/books/content?id=S4xcDCBHOYwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/S4xcDCBHOYwC',
+  description: 'More information to be announced soon on this forthcoming title from Penguin USA.',
+  isbn: '1101043156'
+}
+(node:23295) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:23295) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+rs
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 19:09:55 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Into Thin Air',
+  author: 'Jon Krakauer',
+  image_url: 'http://books.google.com/books/content?id=iTf5X22gChAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/iTf5X22gChAC',
+  description: 'The author describes his spring 1996 trek to Mt. Everest, a disastrous expedition that claimed the lives of eight climbers, and explains why he survived.',
+  isbn: '9780307475251'
+}
+{
+  title: 'Hatchet',
+  author: 'Gary Paulsen',
+  image_url: 'http://books.google.com/books/content?id=QdX94z_OoukC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/QdX94z_OoukC',
+  description: 'Celebrate the thirtieth anniversary of the Newbery Honor–winning survival novel Hatchet with a pocket-sized edition perfect for travelers to take along on their own adventures. This special anniversary edition includes a new introduction and commentary by author Gary Paulsen, pen-and-ink illustrations by Drew Willis, and a water resistant cover. Hatchet has also been nominated as one of America’s best-loved novels by PBS’s The Great American Read. Thirteen-year-old Brian Robeson, haunted by his secret knowledge of his mother’s infidelity, is traveling by single-engine plane to visit his father for the first time since the divorce. When the plane crashes, killing the pilot, the sole survivor is Brian. He is alone in the Canadian wilderness with nothing but his clothing, a tattered windbreaker, and the hatchet his mother had given him as a present. At first consumed by despair and self-pity, Brian slowly learns survival skills—how to make a shelter for himself, how to hunt and fish and forage for food, how to make a fire—and even finds the courage to start over from scratch when a tornado ravages his campsite. When Brian is finally rescued after fifty-four days in the wild, he emerges from his ordeal with new patience and maturity, and a greater understanding of himself and his parents.',
+  isbn: '9781442403321'
+}
+^C
+
+
+   ╭─────────────────────────────────────╮
+   │                                     │
+   │   Update available 2.0.1 → 2.0.2    │
+   │     Run npm i nodemon to update     │
+   │                                     │
+   ╰─────────────────────────────────────╯
+
+peter@serac book_app % git statuys
+git: 'statuys' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+peter@serac book_app % git status
+On branch peter-feature-2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+	modified:   data/books.sql
+	modified:   server.js
+	modified:   views/pages/books/detail.ejs
+	modified:   views/pages/index.ejs
+	modified:   views/pages/new-book.ejs
+	modified:   views/pages/searches/show-search.ejs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+peter@serac book_app % git add .
+peter@serac book_app % git add .
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 19:11:46 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+{
+  title: 'Mountaineering: The Freedom of the Hills',
+  author: 'The Mountaineers',
+  image_url: 'http://books.google.com/books/content?id=GwyXx4DzDjwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/GwyXx4DzDjwC',
+  description: `"If there is only one 'how to' book to read for the aspirant and expert alike, it is Freedom of the Hills. In fact, it is fair to say that Freedom is the definitive guide to mountains and climbing and has influenced pretty much every climber." -- Conrad Anker * 50th anniversary edition of the title considered "bible" of climbing * With nearly 1 million copies sold, this is the all-time bestselling mountaineering and climbing title * Printed on 100% recycled paper Since the publication of the first edition in 1960, Freedom, as the book is known, has endured as a classic mountaineering text. From choosing equipment to tying a climbing knot, and from basic rappelling techniques to planning an expedition -- it's all here in this essential mountaineering reference. A team of more than 40 experts -- all active climbers and climbing educators -- reviewed, revised, and updated this compendium to reflect the latest evolutions in mountaineering equipment and techniques. Major updates include a significant new chapter on conditioning, plus detailed and extensive revisions to rescue and first-response, aid climbing, and waterfall and ice climbing.`,
+  isbn: '9781594854088'
+}
+{
+  title: 'Into Thin Air',
+  author: 'Paul Harrison',
+  image_url: 'http://books.google.com/books/content?id=Pd3luS8uGC4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/Pd3luS8uGC4C',
+  description: 'Take 2 is a brilliant new series that will focus mainly on Science, History or Geography, in addition to Literacy. Each non-fiction reader has a fiction partner on a linked theme. Into Thin Air (Fiction - literacy) is partnered with Stowaway (Fact - History). Ages 8+.',
+  isbn: '9780237542054',
+  bookshelf: 'PENIS'
+}
+^C%                                                                             peter@serac book_app % git checkout -b peter-feature-4
+M	README.md
+M	data/books.sql
+M	package.json
+M	server.js
+M	views/pages/books/detail.ejs
+M	views/pages/books/show-books.ejs
+M	views/pages/index.ejs
+M	views/pages/new-book.ejs
+M	views/pages/searches/new-search.ejs
+M	views/pages/searches/show-search.ejs
+Switched to a new branch 'peter-feature-4'
+peter@serac book_app % git add .
+peter@serac book_app % git status
+On branch peter-feature-4
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+	modified:   data/books.sql
+	modified:   server.js
+	modified:   views/pages/books/detail.ejs
+	modified:   views/pages/index.ejs
+	modified:   views/pages/new-book.ejs
+	modified:   views/pages/searches/show-search.ejs
+
+peter@serac book_app % git commit -m "functional feature 4"
+[peter-feature-4 27a710d] functional feature 4
+ 7 files changed, 137 insertions(+), 47 deletions(-)
+ rewrite data/books.sql (68%)
+ rewrite views/pages/searches/show-search.ejs (74%)
+peter@serac book_app % git push origin peter-feature-4
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (14/14), 2.49 KiB | 2.49 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+remote: 
+remote: Create a pull request for 'peter-feature-4' on GitHub by visiting:
+remote:      https://github.com/petercole3/book_app/pull/new/peter-feature-4
+remote: 
+To https://github.com/petercole3/book_app.git
+ * [new branch]      peter-feature-4 -> peter-feature-4
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 19:48:26 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+ReferenceError: /Users/peter/codefellows/301/book_app/views/pages/books/detail.ejs:31
+    29|           <legend>Add A Book to Bookshelf</legend>
+    30| 
+ >> 31|           <input type="text" name="title" value="<%= book.title %>"></input>
+    32| 
+    33|           <input type="text" name="author" value="<%= book.author %>"></input>
+    34| 
+
+book is not defined
+    at eval (/Users/peter/codefellows/301/book_app/views/pages/books/detail.ejs:31:26)
+    at detail (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:656:17)
+    at tryHandleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:254:36)
+    at View.exports.renderFile [as engine] (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:459:10)
+    at View.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/view.js:135:8)
+    at tryRender (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:640:10)
+    at Function.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:592:3)
+    at ServerResponse.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/response.js:1012:7)
+    at /Users/peter/codefellows/301/book_app/server.js:44:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+{
+  title: 'Into Thin Air',
+  author: 'bob',
+  image_url: 'http://books.google.com/books/content?id=iTf5X22gChAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/iTf5X22gChAC',
+  description: 'The author describes his spring 1996 trek to Mt. Everest, a disastrous expedition that claimed the lives of eight climbers, and explains why he survived.',
+  isbn: '9780307475251',
+  bookshelf: ''
+}
+{
+  title: 'Into Thin Air',
+  author: 'bob john jthsyhtsdmsy',
+  image_url: 'http://books.google.com/books/content?id=iTf5X22gChAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+  url: 'https://www.googleapis.com/books/v1/volumes/iTf5X22gChAC',
+  description: 'The author describes his spring 1996 trek to Mt. Everest, a disastrous expedition that claimed the lives of eight climbers, and explains why he survived.',
+  isbn: '9780307475251',
+  bookshelf: ''
+}
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:10:23 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+internal/modules/cjs/loader.js:957
+    throw err;
+    ^
+
+Error: Cannot find module 'method-override'
+Require stack:
+- /Users/peter/codefellows/301/book_app/server.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:954:17)
+    at Function.Module._load (internal/modules/cjs/loader.js:847:27)
+    at Module.require (internal/modules/cjs/loader.js:1016:19)
+    at require (internal/modules/cjs/helpers.js:69:18)
+    at Object.<anonymous> (/Users/peter/codefellows/301/book_app/server.js:11:24)
+    at Module._compile (internal/modules/cjs/loader.js:1121:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1160:10)
+    at Module.load (internal/modules/cjs/loader.js:976:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:884:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:67:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/Users/peter/codefellows/301/book_app/server.js' ]
+}
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+internal/modules/cjs/loader.js:957
+    throw err;
+    ^
+
+Error: Cannot find module 'method-override'
+Require stack:
+- /Users/peter/codefellows/301/book_app/server.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:954:17)
+    at Function.Module._load (internal/modules/cjs/loader.js:847:27)
+    at Module.require (internal/modules/cjs/loader.js:1016:19)
+    at require (internal/modules/cjs/helpers.js:69:18)
+    at Object.<anonymous> (/Users/peter/codefellows/301/book_app/server.js:11:24)
+    at Module._compile (internal/modules/cjs/loader.js:1121:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1160:10)
+    at Module.load (internal/modules/cjs/loader.js:976:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:884:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:67:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/Users/peter/codefellows/301/book_app/server.js' ]
+}
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+internal/modules/cjs/loader.js:957
+    throw err;
+    ^
+
+Error: Cannot find module 'method-override'
+Require stack:
+- /Users/peter/codefellows/301/book_app/server.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:954:17)
+    at Function.Module._load (internal/modules/cjs/loader.js:847:27)
+    at Module.require (internal/modules/cjs/loader.js:1016:19)
+    at require (internal/modules/cjs/helpers.js:69:18)
+    at Object.<anonymous> (/Users/peter/codefellows/301/book_app/server.js:11:24)
+    at Module._compile (internal/modules/cjs/loader.js:1121:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1160:10)
+    at Module.load (internal/modules/cjs/loader.js:976:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:884:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:67:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/Users/peter/codefellows/301/book_app/server.js' ]
+}
+[nodemon] app crashed - waiting for file changes before starting...
+^C%                                                                             peter@serac book_app % npm i -S method-override
++ method-override@3.0.0
+added 2 packages from 5 contributors and audited 172 packages in 0.663s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:14:13 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+Error: Could not find matching close tag for "<%=".
+    at /Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:705:19
+    at Array.forEach (<anonymous>)
+    at Template.generateSource (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:695:15)
+    at Template.compile (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:548:12)
+    at Object.compile (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:366:16)
+    at handleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:215:18)
+    at tryHandleCache (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:254:16)
+    at View.exports.renderFile [as engine] (/Users/peter/codefellows/301/book_app/node_modules/ejs/lib/ejs.js:459:10)
+    at View.render (/Users/peter/codefellows/301/book_app/node_modules/express/lib/view.js:135:8)
+    at tryRender (/Users/peter/codefellows/301/book_app/node_modules/express/lib/application.js:640:10)
+(node:24259) UnhandledPromiseRejectionWarning: error: syntax error at or near "("
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24259) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:24259) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:24259) UnhandledPromiseRejectionWarning: error: syntax error at or near "("
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24259) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:24259) UnhandledPromiseRejectionWarning: error: syntax error at or near "("
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24259) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+rs
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:17:29 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:24286) UnhandledPromiseRejectionWarning: error: syntax error at or near "("
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24286) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:24286) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:18:49 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:24297) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:24297) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:24297) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:24297) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:24297) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:20:37 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:21:05 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:21:07 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:21:10 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+^C%                                                                                                  peter@serac book_app % node
+Welcome to Node.js v13.2.0.
+Type ".help" for more information.
+> 
+(To exit, press ^C again or ^D or type .exit)
+> 
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:22:17 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:22:53 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+^C%                                                                                                  peter@serac book_app % git add .
+peter@serac book_app % git commit -m "update functional"
+[peter-feature-4 b7211bb] update functional
+ 6 files changed, 63 insertions(+), 11 deletions(-)
+peter@serac book_app % nodemon                          
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:24:12 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:38:17 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:38:20 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+rs
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:38:29 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:38:52 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:38:55 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+rs
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:38:59 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:39:21 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:39:23 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:39:33 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:41:00 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:41:02 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:44:15 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:44:20 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:24650) UnhandledPromiseRejectionWarning: error: bind message supplies 7 parameters, but prepared statement "" requires 8
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24650) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:24650) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:45:08 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:45:09 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:24675) UnhandledPromiseRejectionWarning: error: there is no parameter $0
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:24675) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:24675) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:46:20 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:47:01 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:47:03 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:51:14 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:52:59 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:53:10 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:53:47 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:54:20 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:54:21 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:54:39 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:54:43 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:55:09 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:55:14 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 20:55:24 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:02:21 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:03:07 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:03:09 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:03:23 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:03:35 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+^C%                                                                                                  peter@serac book_app % git add .
+peter@serac book_app % git status
+On branch peter-feature-4
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+	modified:   server.js
+	modified:   views/pages/books/detail.ejs
+
+peter@serac book_app % git commit -m "work"
+[peter-feature-4 49f830b] work
+ 3 files changed, 47 insertions(+), 16 deletions(-)
+peter@serac book_app % nodemon  
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:04:56 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:05:40 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:07:19 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:07:58 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:09:31 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:14:16 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:15:27 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:15:36 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:25248) UnhandledPromiseRejectionWarning: error: syntax error at or near "SET"
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25248) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:25248) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:25248) UnhandledPromiseRejectionWarning: error: syntax error at or near "SET"
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25248) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:16:31 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:25262) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25262) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:25262) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:25262) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25262) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:17:21 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:25276) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25276) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:25276) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:18:04 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:25289) UnhandledPromiseRejectionWarning: error: syntax error at or near "="
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25289) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:25289) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:19:12 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+(node:25304) UnhandledPromiseRejectionWarning: error: could not determine data type of parameter $1
+    at Connection.parseE (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:604:13)
+    at Connection.parseMessage (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:403:19)
+    at Socket.<anonymous> (/Users/peter/codefellows/301/book_app/node_modules/pg/lib/connection.js:123:22)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:326:12)
+    at readableAddChunk (_stream_readable.js:301:11)
+    at Socket.Readable.push (_stream_readable.js:235:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+(node:25304) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:25304) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:19:59 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+^C%                                                                                                  peter@serac book_app % git add -A
+peter@serac book_app % git commit -m "done with delete"
+[peter-feature-4 80bcf04] done with delete
+ 2 files changed, 8 insertions(+), 7 deletions(-)
+peter@serac book_app % git push -u origin book_app
+error: src refspec book_app does not match any
+error: failed to push some refs to 'https://github.com/petercole3/book_app.git'
+peter@serac book_app % git push -u origin master  
+To https://github.com/petercole3/book_app.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/petercole3/book_app.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+peter@serac book_app % git push -u origin book_app
+error: src refspec book_app does not match any
+error: failed to push some refs to 'https://github.com/petercole3/book_app.git'
+peter@serac book_app % git checkout -b brandon    
+Switched to a new branch 'brandon'
+peter@serac book_app % git push -u origin brandon
+Enumerating objects: 38, done.
+Counting objects: 100% (38/38), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (27/27), 3.79 KiB | 3.79 MiB/s, done.
+Total 27 (delta 16), reused 0 (delta 0)
+remote: Resolving deltas: 100% (16/16), completed with 7 local objects.
+remote: 
+remote: Create a pull request for 'brandon' on GitHub by visiting:
+remote:      https://github.com/petercole3/book_app/pull/new/brandon
+remote: 
+To https://github.com/petercole3/book_app.git
+ * [new branch]      brandon -> brandon
+Branch 'brandon' set up to track remote branch 'brandon' from 'origin'.
+peter@serac book_app % git pull origin master
+remote: Enumerating objects: 2, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/petercole3/book_app
+ * branch            master     -> FETCH_HEAD
+   eb1c136..a7006e9  master     -> origin/master
+Updating 80bcf04..a7006e9
+Fast-forward
+peter@serac book_app % heroku logs --app book-app-peter-cole
+2019-12-19T21:26:39.684029+00:00 app[web.1]: at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+2019-12-19T21:26:39.684038+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+2019-12-19T21:26:39.872360+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=495e033b-2c95-4d53-8e44-5282e85e14d5 fwd="209.210.157.165" dyno=web.1 connect=0ms service=3ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:39.766930+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=d2749c19-6937-4a51-a62f-a6bec7f94e2b fwd="209.210.157.165" dyno=web.1 connect=0ms service=4ms status=304 bytes=151 protocol=https
+2019-12-19T21:26:39.881587+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=594cf2df-72cd-4440-9438-4d1e925ac45f fwd="209.210.157.165" dyno=web.1 connect=0ms service=5ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:39.877679+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=86944471-4830-4c95-8f5f-9b983557f2d2 fwd="209.210.157.165" dyno=web.1 connect=1ms service=8ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:41.931573+00:00 heroku[router]: at=info method=GET path="/books/1" host=book-app-peter-cole.herokuapp.com request_id=13500981-6a74-4179-a626-dfcc6ffa058c fwd="209.210.157.165" dyno=web.1 connect=2ms service=10ms status=200 bytes=3208 protocol=https
+2019-12-19T21:26:44.091468+00:00 heroku[router]: at=info method=POST path="/delete/1?_method=delete" host=book-app-peter-cole.herokuapp.com request_id=a6fef624-d1a9-4980-866e-4d9d686c01b5 fwd="209.210.157.165" dyno=web.1 connect=1ms service=4ms status=302 bytes=234 protocol=https
+2019-12-19T21:26:44.174634+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=89c032e8-783c-4e34-a757-a3319562b41f fwd="209.210.157.165" dyno=web.1 connect=1ms service=5ms status=200 bytes=717 protocol=https
+2019-12-19T21:26:44.273273+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=5330972f-269c-4301-ab75-2559b4956eba fwd="209.210.157.165" dyno=web.1 connect=1ms service=6ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:44.268987+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=d0bac79a-882a-4d05-afdf-4e7defd80566 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:44.268525+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=9c6370c1-dd7a-44b8-aa33-c871ad21aa4a fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:45.987011+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=c00fe3af-7ce0-49fb-9948-3c17d2fd8f78 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:45.986051+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=e34806e2-425a-40ea-a64a-3ae868ee3e0d fwd="209.210.157.165" dyno=web.1 connect=0ms service=1ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:45.896674+00:00 heroku[router]: at=info method=GET path="/new-book" host=book-app-peter-cole.herokuapp.com request_id=8c97193f-0b76-471a-9510-813cc5a2d23b fwd="209.210.157.165" dyno=web.1 connect=1ms service=3ms status=304 bytes=151 protocol=https
+2019-12-19T21:26:45.995981+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=41d1f3e2-6ce5-458a-9e80-e768ce5fd426 fwd="209.210.157.165" dyno=web.1 connect=1ms service=9ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:52.247611+00:00 heroku[router]: at=info method=POST path="/searches" host=book-app-peter-cole.herokuapp.com request_id=1486a755-908c-4e57-b5b7-a3398f3768a6 fwd="209.210.157.165" dyno=web.1 connect=1ms service=442ms status=200 bytes=34205 protocol=https
+2019-12-19T21:26:54.503189+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+2019-12-19T21:26:54.503204+00:00 app[web.1]: at Connection.parseE (/app/node_modules/pg/lib/connection.js:604:13)
+2019-12-19T21:26:54.503206+00:00 app[web.1]: at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:403:19)
+2019-12-19T21:26:54.503208+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:123:22)
+2019-12-19T21:26:54.503211+00:00 app[web.1]: at Socket.emit (events.js:210:5)
+2019-12-19T21:26:54.503213+00:00 app[web.1]: at addChunk (_stream_readable.js:309:12)
+2019-12-19T21:26:54.503216+00:00 app[web.1]: at readableAddChunk (_stream_readable.js:290:11)
+2019-12-19T21:26:54.503218+00:00 app[web.1]: at Socket.Readable.push (_stream_readable.js:224:10)
+2019-12-19T21:26:54.503220+00:00 app[web.1]: at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+2019-12-19T21:26:54.503278+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+2019-12-19T21:26:54.504818+00:00 heroku[router]: at=info method=POST path="/add" host=book-app-peter-cole.herokuapp.com request_id=babfda13-809c-42df-8931-a08c8160612d fwd="209.210.157.165" dyno=web.1 connect=1ms service=4ms status=302 bytes=234 protocol=https
+2019-12-19T21:26:54.682555+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=a5a63b13-ae6d-4e77-a5aa-50d2a9efc8c9 fwd="209.210.157.165" dyno=web.1 connect=4ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:54.582485+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=6ebad842-2e5c-45a2-a27e-5f42e23f701b fwd="209.210.157.165" dyno=web.1 connect=1ms service=4ms status=304 bytes=151 protocol=https
+2019-12-19T21:26:54.678787+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=11e6f5d9-9605-4307-9ba8-578bc494f2f1 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:26:54.680840+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=c4a25edd-915b-43eb-bca4-d77304d78922 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:26.000000+00:00 app[api]: Build started by user petercole3@gmail.com
+2019-12-19T21:27:40.842316+00:00 app[api]: Deploy 80bcf04a by user petercole3@gmail.com
+2019-12-19T21:27:40.842316+00:00 app[api]: Release v16 created by user petercole3@gmail.com
+2019-12-19T21:27:41.224389+00:00 heroku[web.1]: Restarting
+2019-12-19T21:27:41.243658+00:00 heroku[web.1]: State changed from up to starting
+2019-12-19T21:27:41.000000+00:00 app[api]: Build succeeded
+2019-12-19T21:27:42.059010+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2019-12-19T21:27:42.127640+00:00 heroku[web.1]: Process exited with status 143
+2019-12-19T21:27:43.430283+00:00 heroku[web.1]: Starting process with command `npm start`
+2019-12-19T21:27:46.149066+00:00 app[web.1]: 
+2019-12-19T21:27:46.149083+00:00 app[web.1]: > book_app@1.0.0 start /app
+2019-12-19T21:27:46.149085+00:00 app[web.1]: > node server.js
+2019-12-19T21:27:46.149087+00:00 app[web.1]: 
+2019-12-19T21:27:46.536004+00:00 app[web.1]: Thu, 19 Dec 2019 21:27:46 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+2019-12-19T21:27:46.571560+00:00 app[web.1]: Listening on port 10034
+2019-12-19T21:27:46.916578+00:00 heroku[web.1]: State changed from starting to up
+2019-12-19T21:27:48.461728+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=b816255d-29a1-4f26-95ee-258bd1ad1ea6 fwd="209.210.157.165" dyno=web.1 connect=0ms service=57ms status=304 bytes=151 protocol=https
+2019-12-19T21:27:48.645511+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=11b296c6-bc55-4f7f-b1ac-90e3c46d42ca fwd="209.210.157.165" dyno=web.1 connect=0ms service=17ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:48.646852+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=60630cdd-ed78-46b1-8165-b20e392d8eeb fwd="209.210.157.165" dyno=web.1 connect=0ms service=19ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:48.653057+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=c546f14d-c489-446b-92d6-dbe6a9c8bf59 fwd="209.210.157.165" dyno=web.1 connect=1ms service=22ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:51.812911+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=d042f619-1c6e-4f2e-9dc4-894f63158244 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:51.811504+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=50b72203-391b-43c7-ade7-a8e6b6cc6b3e fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:51.705658+00:00 heroku[router]: at=info method=GET path="/new-book" host=book-app-peter-cole.herokuapp.com request_id=a56d6b70-ada6-42fc-8ddd-eb778466cedc fwd="209.210.157.165" dyno=web.1 connect=1ms service=3ms status=304 bytes=151 protocol=https
+2019-12-19T21:27:51.815991+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=1af78086-0875-4fb6-b0a5-5be0733f2991 fwd="209.210.157.165" dyno=web.1 connect=1ms service=7ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:57.587730+00:00 heroku[router]: at=info method=POST path="/searches" host=book-app-peter-cole.herokuapp.com request_id=7c60b224-0894-40ba-8fa4-02eae0689f40 fwd="209.210.157.165" dyno=web.1 connect=1ms service=729ms status=200 bytes=21669 protocol=https
+2019-12-19T21:27:59.648374+00:00 heroku[router]: at=info method=POST path="/add" host=book-app-peter-cole.herokuapp.com request_id=75da7852-014b-4fd2-831a-b1c103979d6a fwd="209.210.157.165" dyno=web.1 connect=1ms service=12ms status=302 bytes=234 protocol=https
+2019-12-19T21:27:59.651682+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+2019-12-19T21:27:59.651699+00:00 app[web.1]: at Connection.parseE (/app/node_modules/pg/lib/connection.js:604:13)
+2019-12-19T21:27:59.651701+00:00 app[web.1]: at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:403:19)
+2019-12-19T21:27:59.651703+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:123:22)
+2019-12-19T21:27:59.651705+00:00 app[web.1]: at Socket.emit (events.js:210:5)
+2019-12-19T21:27:59.651707+00:00 app[web.1]: at addChunk (_stream_readable.js:309:12)
+2019-12-19T21:27:59.651709+00:00 app[web.1]: at readableAddChunk (_stream_readable.js:290:11)
+2019-12-19T21:27:59.651711+00:00 app[web.1]: at Socket.Readable.push (_stream_readable.js:224:10)
+2019-12-19T21:27:59.651713+00:00 app[web.1]: at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+2019-12-19T21:27:59.651766+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+2019-12-19T21:27:59.651927+00:00 app[web.1]: (node:23) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+2019-12-19T21:27:59.728911+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=d01473f8-e0cf-49bd-a934-c053e0eac652 fwd="209.210.157.165" dyno=web.1 connect=1ms service=6ms status=304 bytes=151 protocol=https
+2019-12-19T21:27:59.836770+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=aba9700b-c279-40ef-9063-2aaddcc2bbbc fwd="209.210.157.165" dyno=web.1 connect=0ms service=5ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:59.838176+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=aecce7f3-3496-40cc-af75-01a8d78bad96 fwd="209.210.157.165" dyno=web.1 connect=1ms service=6ms status=404 bytes=220 protocol=https
+2019-12-19T21:27:59.839872+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=fc999929-b68d-4dfe-994b-280052d7c73e fwd="209.210.157.165" dyno=web.1 connect=1ms service=8ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:16.585869+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=681d0aa9-e3df-4ea3-a096-fb941d8ab87f fwd="209.210.157.165" dyno=web.1 connect=0ms service=1ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:16.591771+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=77747783-1393-48ca-a06f-f8b769e0dae9 fwd="209.210.157.165" dyno=web.1 connect=0ms service=1ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:16.588503+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=d57bd32f-2be7-475b-8a45-598c97127e3f fwd="209.210.157.165" dyno=web.1 connect=0ms service=1ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:29.643495+00:00 heroku[router]: at=info method=GET path="/new-book" host=book-app-peter-cole.herokuapp.com request_id=ee340e48-b889-43c1-bf2e-9b3fddba1022 fwd="209.210.157.165" dyno=web.1 connect=0ms service=3ms status=304 bytes=151 protocol=https
+2019-12-19T21:29:29.749800+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=84c0e9a4-25be-4aba-a5e9-fbbf93e97c3a fwd="209.210.157.165" dyno=web.1 connect=0ms service=4ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:29.755273+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=b3b2a496-1128-419a-99bd-809dea6e5450 fwd="209.210.157.165" dyno=web.1 connect=0ms service=5ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:29.751892+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=a551a10d-332b-488e-8ed6-5d118b8e46aa fwd="209.210.157.165" dyno=web.1 connect=0ms service=3ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:33.940751+00:00 heroku[router]: at=info method=POST path="/searches" host=book-app-peter-cole.herokuapp.com request_id=6f87df67-cca2-4c0c-bd2f-d595e8d65959 fwd="209.210.157.165" dyno=web.1 connect=0ms service=236ms status=200 bytes=21669 protocol=https
+2019-12-19T21:29:36.301696+00:00 heroku[router]: at=info method=POST path="/add" host=book-app-peter-cole.herokuapp.com request_id=6850554b-d159-4fbd-b726-d9dc3505f066 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=302 bytes=234 protocol=https
+2019-12-19T21:29:36.303764+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: error: column "url" of relation "books" does not exist
+2019-12-19T21:29:36.303788+00:00 app[web.1]: at Connection.parseE (/app/node_modules/pg/lib/connection.js:604:13)
+2019-12-19T21:29:36.303791+00:00 app[web.1]: at Connection.parseMessage (/app/node_modules/pg/lib/connection.js:403:19)
+2019-12-19T21:29:36.303793+00:00 app[web.1]: at Socket.<anonymous> (/app/node_modules/pg/lib/connection.js:123:22)
+2019-12-19T21:29:36.303795+00:00 app[web.1]: at Socket.emit (events.js:210:5)
+2019-12-19T21:29:36.303798+00:00 app[web.1]: at addChunk (_stream_readable.js:309:12)
+2019-12-19T21:29:36.303800+00:00 app[web.1]: at readableAddChunk (_stream_readable.js:290:11)
+2019-12-19T21:29:36.303803+00:00 app[web.1]: at Socket.Readable.push (_stream_readable.js:224:10)
+2019-12-19T21:29:36.303805+00:00 app[web.1]: at TCP.onStreamRead (internal/stream_base_commons.js:182:23)
+2019-12-19T21:29:36.303849+00:00 app[web.1]: (node:23) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+2019-12-19T21:29:36.496798+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=e807db42-54bc-410b-b321-995bb2e1a1d2 fwd="209.210.157.165" dyno=web.1 connect=0ms service=3ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:36.381603+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=3c914fc4-19c4-430f-a1cf-c8bbcf384e3c fwd="209.210.157.165" dyno=web.1 connect=0ms service=4ms status=304 bytes=151 protocol=https
+2019-12-19T21:29:36.495351+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=d8632f51-1daf-42a3-b4c9-8d00fddefbf6 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:29:36.497680+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=d4cded32-737c-47f9-b14a-9445153987a4 fwd="209.210.157.165" dyno=web.1 connect=0ms service=1ms status=404 bytes=220 protocol=https
+2019-12-19T21:30:17.700695+00:00 heroku[router]: at=info method=GET path="/" host=book-app-peter-cole.herokuapp.com request_id=5bf52be5-bb70-4739-8997-084bd01fd1e1 fwd="209.210.157.165" dyno=web.1 connect=0ms service=4ms status=304 bytes=151 protocol=https
+2019-12-19T21:30:17.805142+00:00 heroku[router]: at=info method=GET path="/public/styles/layout.css" host=book-app-peter-cole.herokuapp.com request_id=afbba481-3db5-46c9-ac21-8bbdde7b123f fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:30:17.801799+00:00 heroku[router]: at=info method=GET path="/public/styles/base.css" host=book-app-peter-cole.herokuapp.com request_id=7ee26616-704f-4514-8bbe-6d71c6a3ed14 fwd="209.210.157.165" dyno=web.1 connect=0ms service=2ms status=404 bytes=220 protocol=https
+2019-12-19T21:30:17.801383+00:00 heroku[router]: at=info method=GET path="/public/styles/modules.css" host=book-app-peter-cole.herokuapp.com request_id=0c0215b5-d169-43a4-9e84-0bd5626ef6a6 fwd="209.210.157.165" dyno=web.1 connect=0ms service=1ms status=404 bytes=220 protocol=https
+peter@serac book_app % heroku pg:psql -f data/books.sql --app book-app-peter-cole      
+--> Connecting to postgresql-horizontal-79488
+DROP TABLE
+CREATE TABLE
+peter@serac book_app % nodemon
+[nodemon] 2.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:46:23 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:48:25 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:49:07 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Thu, 19 Dec 2019 21:50:10 GMT body-parser deprecated undefined extended: provide extended option at server.js:19:17
+Listening on port 3000
+^C%                                                                                                  peter@serac book_app % clear
+
+peter@serac book_app % git status
+On branch brandon
+Your branch is ahead of 'origin/brandon' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   server.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+peter@serac book_app %     
+
+
+
+
+
+
+
+
+
+
+
