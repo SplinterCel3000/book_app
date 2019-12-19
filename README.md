@@ -55,13 +55,14 @@ Estimate of time needed to complete: 2hr
 
 Start time: 12pm
 
-Finish time: ____
+Finish time: 2pm
 
-Actual time needed to complete: ____
+Actual time needed to complete: 2hr
 
 - 12-19-2019 12:13pm - Installed method-override
 - 12-19-2019 12:21pm - Update books functional
-- 12-19-2019 12:55pm - update works better and distinct
+- 12-19-2019 12:55pm - Update works better, no distinct
+- 12-19-2019 1:55pm - Live on Heroku, complete Delete and Update
 
 ## 
 
